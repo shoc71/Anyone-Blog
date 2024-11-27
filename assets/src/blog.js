@@ -9,3 +9,27 @@
 // TODO: Call the `renderBlogList` function
 
 // TODO: Redirect to the home page using the `redirectPage` function found in logic.js when the back button is clicked
+
+const displayBlogs = () => {
+    const blogs = readLocalStorage();
+    const blogContainer = document.getElementById('blogContainer'); // Add a container in HTML
+  
+    blogContainer.innerHTML = ''; // Clear previous content
+  
+    blogs.forEach((blog) => {
+      const blogDiv = document.createElement('div');
+      blogDiv.className = 'blog';
+  
+      blogDiv.innerHTML = `
+        <h3>${blog.title}</h3>
+        <p><strong>${blog.username}</strong> - ${new Date(blog.timestamp).toLocaleString()}</p>
+        <p>${blog.content}</p>
+      `;
+  
+      blogContainer.appendChild(blogDiv);
+    });
+  };
+  
+  // Call displayBlogs on page load
+  window.addEventListener('DOMContentLoaded', displayBlogs);
+  

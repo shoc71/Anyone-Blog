@@ -99,11 +99,10 @@ main {
   color: var(--light);
 }
 
-
 .dark main {
   background-color: var(--dark-accent);
   color: var(--light);
-  border-top: solid .5rem var(--disabled);
+  border-top: solid 0.5rem var(--disabled);
 }
 
 .light header,
