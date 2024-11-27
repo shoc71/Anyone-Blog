@@ -28,3 +28,4 @@ This project is licensed under the [![License](https://opensource.org/licenses/A
 ## Questions
 For any questions or concerns, please email mrdrlogic@gmail.com Or [GitHub Profile](https://github.com/shoc71)
 
+Deployed page: [https://shoc71.github.io/Anyone-Blog/](https://shoc71.github.io/Anyone-Blog/)
