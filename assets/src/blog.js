@@ -29,9 +29,10 @@ const readLocalStorage = () => {
   
       blogDiv.innerHTML = `
         <h3>${blog.title}</h3><sup>- ${new Date(blog.timestamp).toLocaleString()}</sup>
-        <p>${blog.username}</p>
-        <hr><br />
-        <blockquote>${blog.content}</blockquote>
+        <hr>
+        <p>&emsp;${blog.content}</p>
+        <br /><br />
+        <blockquote>Posted by: ${blog.username}</blockquote>
       `;
   
       blogContainer.appendChild(blogDiv);
