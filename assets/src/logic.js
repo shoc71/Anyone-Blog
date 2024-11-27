@@ -62,17 +62,6 @@ document.getElementById('blogForm').addEventListener('submit', (event) => {
   window.location.href = '../../blog.html'
 
 });
-
-// Read data from local storage
-const readLocalStorage = () => {
-  const data = JSON.parse(localStorage.getItem('blogs')) || [];
-  console.log('Stored Blogs:', data);
-  return data;
-};
-
-// Example usage: Call `readLocalStorage` on page load to retrieve saved data
-window.addEventListener('DOMContentLoaded', readLocalStorage);
-
 // ! Use the following function whenever you need to redirect to a different page
 
 let redirectURL = '';

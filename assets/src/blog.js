@@ -1,29 +1,37 @@
-// TODO: Create a variable that selects the main element, and a variable that selects the back button element
-
-// TODO: Create a function that builds an element and appends it to the DOM
-
-// TODO: Create a function that handles the case where there are no blog posts to display
-
-// TODO: Create a function called `renderBlogList` that renders the list of blog posts if they exist. If not, call the no posts function.
-
-// TODO: Call the `renderBlogList` function
-
-// TODO: Redirect to the home page using the `redirectPage` function found in logic.js when the back button is clicked
-
-const displayBlogs = () => {
+// Function to retrieve blogs from local storage
+// Function to read blogs from local storage
+const readLocalStorage = () => {
+    const data = JSON.parse(localStorage.getItem('blogs')) || [];
+    return data;
+  };
+  
+  // Function to display blogs on the page
+  const displayBlogs = () => {
     const blogs = readLocalStorage();
-    const blogContainer = document.getElementById('blogContainer'); // Add a container in HTML
+    console.log('Blogs fetched from local storage:', blogs);
+  
+    const blogContainer = document.getElementById('blogContainer');
+    if (!blogContainer) {
+      console.error('Blog container not found!');
+      return;
+    }
   
     blogContainer.innerHTML = ''; // Clear previous content
   
+    if (blogs.length === 0) {
+      blogContainer.innerHTML = '<p>No blogs to display. Add some blogs!</p>';
+      return;
+    }
+  
     blogs.forEach((blog) => {
       const blogDiv = document.createElement('div');
-      blogDiv.className = 'blog';
+      blogDiv.className = 'blog article card';
   
       blogDiv.innerHTML = `
-        <h3>${blog.title}</h3>
-        <p><strong>${blog.username}</strong> - ${new Date(blog.timestamp).toLocaleString()}</p>
-        <p>${blog.content}</p>
+        <h3>${blog.title}</h3><sup>- ${new Date(blog.timestamp).toLocaleString()}</sup>
+        <p>${blog.username}</p>
+        <hr><br />
+        <blockquote>${blog.content}</blockquote>
       `;
   
       blogContainer.appendChild(blogDiv);
@@ -32,4 +40,3 @@ const displayBlogs = () => {
   
   // Call displayBlogs on page load
   window.addEventListener('DOMContentLoaded', displayBlogs);
-  
