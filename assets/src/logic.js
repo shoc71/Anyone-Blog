@@ -59,7 +59,7 @@ document.getElementById('blogForm').addEventListener('submit', (event) => {
 
   console.log('Blog saved:', blogEntry);
   // alert('Blog entry saved successfully!');
-  window.location.href = '../../blog.html'
+  window.location.href = 'blog.html'
 
 });
 // ! Use the following function whenever you need to redirect to a different page
