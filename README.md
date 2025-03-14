@@ -1,6 +1,8 @@
 # Anyone-Blog
 written by shoc71
 
+![Anyone-blog](https://github.com/user-attachments/assets/68bdbe93-07b7-4681-9b2c-b1ce21babd87)
+
 ## Description
 Full-stack Blogging website for anonymous users to post their thoughts about they want to with a title and description, all saved on the localstorage json (temp) to showoff as a working model and hopefully display more when a working server is implemented.
 
